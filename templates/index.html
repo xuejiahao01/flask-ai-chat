@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI聊天</title>
+</head>
+<body>
+
+    <h1>我的AI聊天 🤖</h1>
+
+    <form method="POST">
+        <input type="text" name="user_input" placeholder="输入你的问题">
+        <button type="submit">发送</button>
+    </form>
+
+    <hr>
+
+    <div>
+        {% for msg in messages %}
+            {% if msg.role == 'user' %}
+                <p><b>你：</b>{{ msg.content }}</p>
+            {% else %}
+                <p><b>AI：</b>{{ msg.content }}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+</body>
+</html>
